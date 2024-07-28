@@ -1,0 +1,33 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Greeting from '../components/Greeting';
+const pageTitle = "Tag Index";
+const allPosts = await Astro.glob('../posts/*.md');
+const tags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
+---
+https://www.marcjacobs.com/us-en/the-marc-jacobs/new-arrivals/view-all-new-arrivals/?utm_source=condenast&utm_medium=display&utm_campaign=PF24_CAMPAIGN_052024&utm_content=SocialAmplification&fbclid=IwZXh0bgNhZW0BMAABHd3XsLViX2QUUidRPlTtKNOTfRNxpmDJDVqV9948bv2f6ld4YlJKw9SJhw_aem_ZYqcfug4coUbLV_1H9mYPA<BaseLayout pageTitle={pageTitle}>
+    <div>
+        {tags.map((tag)=>(
+            <p><a href={`/tags/${tag}`}>{tag}</a></p>
+        ))}
+        </div>
+</BaseLayout>
+<style>
+    a {
+      color: #00539F;
+    }
+  
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  
+    .tag {
+      margin: 0.25em;
+      border: dotted 1px #a1a1a1;
+      border-radius: .5em;
+      padding: .5em 1em;
+      font-size: 1.15em;
+      background-color: #F8FCFD;
+    }
+  </style>

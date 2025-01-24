@@ -1,56 +1,68 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro"
 const pageTitle = "About Me"
-const identity = {
-    firstName: "Sarah",
-    country: "Canada",
-    occupation:"Technical Writer",
-    hobbies: ["photography", "birdwatching","baseball"]
-};
-const skills = ["HTML","CSS","Javascript","React","Astro","Writing Docs"];
-const happy = true;
-const finished = false;
-const goal = 3;
-
-const skillColor = "#00FF00";
-const fontWeight = "bold";
-const textCase = "uppercase"
 ---
 
 <BaseLayout pageTitle = {pageTitle}>
-    <slot>
-        <style define:vars={{skillColor, fontWeight, textCase}}>
-            h1 {
-              color: purple;
-              font-size: 4rem;
-            }
-            .skill {
-              color: var(--skillColor);
-              font-weight: var(--fontWeight);
-              text-transform: var(--textCase);
-            }
-          </style>
-        </slot>
-        <h1>{pageTitle}</h1>
-        <h2>... and my new Astro site!</h2>
-      
-        <p>I am working through Astro's introductory tutorial. This is the second page on my website, and it's the first one I built myself!</p>
-      
-        <p>This site will update as I complete more of the tutorial, so keep checking back and see how my journey is going!</p>  
-        <p>Here are a few facts about me:</p>
-        <ul>
-        <li>My name is {identity.firstName}.</li>
-        <li>I live in {identity.country} and I work as a {identity.occupation}.</li>
-        {identity.hobbies.length >= 2 &&
-            <li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
-        }
-        </ul>
-        <p>My skills are:</p>
-        <ul>
-        {skills.map((skill) => <li class = "skill">{skill}</li>)}
-        </ul>
-        {happy && <p>I am happy to be learning Astro!</p>}
-        {finished && <p>I finished this tutorial!</p>}
-        {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
-    </slot>
-    </BaseLayout>
+  <h1>{pageTitle}</h1>
+  <p>Hello, my name is Anthony, and I am based in the Tampa Bay area. If you are here, it's probably because you are asking yourself WTF this site is all about, so let explain.</p>
+  <p>The idea for this site began years ago when I wanted to create a personal knowledgebase to document my experiences, trials, and failures over time. My goals were simple:</p>
+
+  <ul>
+      <li>Have a single reference point to:
+          <ul>
+              <li>Refresh my memory about garden details from specific years</li>
+              <li>Recall why I chose certain technologies</li>
+          </ul>
+      </li>
+  </ul>
+
+  <h2>Initial Attempts</h2>
+
+  <p>At first, I tried finding a pre-built wiki solution, but:</p>
+  <ul>
+      <li>Never successfully implemented any options</li>
+      <li>Lost interest after moving to my current house</li>
+  </ul>
+
+  <h2>Current Motivation</h2>
+
+  <p>Years later, I'm motivated to:</p>
+  <ul>
+      <li>Meaningfully document my interests</li>
+      <li>Develop my web development skills</li>
+      <li>Create a platform for personal documentation</li>
+  </ul>
+
+  <h2>Current Blog Status</h2>
+
+  <p>As of now:</p>
+  <ul>
+      <li>Only one category exists: "Building This Blog"</li>
+      <li>This category will document challenges in blog development</li>
+      <li>Anticipated challenges include:
+          <ul>
+              <li>HTML/CSS issues</li>
+              <li>Astro-related problems</li>
+          </ul>
+      </li>
+  </ul>
+  <h2>Future Categories</h2>
+  <ul>
+      <li>While there's no telling what the future brings, these are some of the categories I hope to include:</li>
+          <ul>
+              <li>Raising Chickens for meat/eggs</li>
+              <li>Building a low maintenance garden/food forest</li>
+              <li>Integrating Technology into the Homestead</li>
+          </ul>
+      </li>
+  </ul>
+  <h2>Learning Approach</h2>
+
+  <p>The blog serves as a learning tool where I:</p>
+  <ul>
+      <li>Write about challenges I encounter</li>
+      <li>Solidify my understanding of technologies</li>
+      <li>Prevent forgetting solutions by documenting them</li>
+  </ul>
+</BaseLayout>

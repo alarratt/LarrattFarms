@@ -2,7 +2,7 @@
 layout: ../../layouts/MarkdownPostLayout.astro
 title: "Day 2: Fixing Collections"
 pubDate: 2025-Jan-24
-description: "Well, I broke it
+description: "Well, I broke it"
 author: "Anthony Larratt"
 tags: ["astro", "blogging", "learning in public"]
 ---
